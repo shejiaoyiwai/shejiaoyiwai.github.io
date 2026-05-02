@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>社交意外 ✨</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- 顶部导航 -->
+  <nav class="navbar">
+    <div class="nav-brand">✨ 社交意外</div>
+    <div class="nav-tabs">
+      <button class="tab active" data-category="all">🎲 全部</button>
+      <button class="tab" data-category="abstract">🤪 抽象</button>
+      <button class="tab" data-category="emotion">💘 情感</button>
+    </div>
+    <div class="nav-actions">
+      <button id="themeToggle" class="icon-btn" title="切换深色模式">🌙</button>
+    </div>
+  </nav>
+
+  <!-- 简介 -->
+  <section class="intro-section" id="introSection">
+    <div class="intro-box">
+      <p id="introText" class="intro-text" contenteditable="false" spellcheck="false">
+        📝 2016年-2025年，我花了很多时间微信群聊。严格说真正的聊天并不多，更多的是群友交换各种互联网抽象段子。2022年开始，我开始有意识地保存一些，加起来大概有十来万字，主要是抽象发言和男女情感描写两大类。
+
+        这个网站就是让AI读取拆分这些“社交货币”后的结果，借此可以清晰地看到它们的特点：混乱和肤浅。
+        按照部分神经学家说法，大脑每天大部分时间里就是在神游，也就是说，大脑在很多时候确实“只能”做混乱和肤浅的事情，那么我们会消耗时间在微信群聊上面可能并不意外。意外的是，我们竟然会把绝大部分上网时间花在这上面。
+      </p>
+      <p class="intro-hint">💡 Email: shejiaoyiwai@gmail.com</p>
+    </div>
+  </section>
+
+  <!-- 搜索栏 -->
+  <div class="search-bar">
+    <input type="text" id="searchInput" placeholder="搜索段子内容..." />
+    <span class="search-icon">🔍</span>
+  </div>
+
+  <!-- 主展示区 -->
+  <main class="main-content">
+    <!-- 随机展示卡片 -->
+    <section class="card hero-card" id="heroCard">
+      <div class="card-header">
+        <span class="badge" id="heroBadge">随机推荐</span>
+        <span class="joke-count" id="jokeCount"></span>
+      </div>
+      <div class="joke-text" id="heroText">加载中...</div>
+      <div class="card-footer">
+        <span class="joke-source" id="heroSource"></span>
+        <span class="joke-date" id="heroDate"></span>
+      </div>
+      <button class="btn-refresh" id="btnRefresh">🎲 换一个</button>
+    </section>
+
+    <!-- 标签区域 -->
+    <section class="wordcloud-section" id="wordcloudSection">
+      <h3>🏷️ 标签</h3>
+      <div id="wordcloud" class="wordcloud"></div>
+    </section>
+
+    <!-- 筛选结果列表 -->
+    <section class="result-list" id="resultList" style="display:none;">
+      <div class="result-header">
+        <span id="resultTitle">搜索结果</span>
+        <button class="btn-back" id="btnBack">← 返回随机</button>
+      </div>
+      <div id="resultContainer"></div>
+      <div class="pagination" id="pagination"></div>
+    </section>
+  </main>
+
+  <!-- 底部 -->
+  <footer class="footer">
+    <p>✨ 社交意外 · 数据来源：Obsidian 笔记库 · 基于 GitHub Pages 构建</p>
+    <p id="statsText"></p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
